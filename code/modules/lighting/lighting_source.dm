@@ -160,6 +160,11 @@
 
 		LAZYREMOVE(C.affecting, src)
 
+		SSdemo.mark_turf(C.northeast)
+		SSdemo.mark_turf(C.northwest)
+		SSdemo.mark_turf(C.southeast)
+		SSdemo.mark_turf(C.southwest)
+
 	effect_str = null
 
 /datum/light_source/proc/recalc_corner(var/datum/lighting_corner/C)
@@ -238,6 +243,7 @@
 		source_turf.luminosity = CEILING(light_range, 1)
 		for(T in view(CEILING(light_range, 1), source_turf))
 			turfs += T
+			SSdemo.mark_turf(T)
 			if((!IS_DYNAMIC_LIGHTING(T) && !T.light_sources) || T.has_opaque_atom )
 				continue
 			if(!T.lighting_corners_initialised)

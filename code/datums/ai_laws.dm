@@ -442,6 +442,7 @@
 /datum/ai_laws/proc/show_laws(who, title = "<b>Соблюдайте данные законы:</b>")
 	var/list/printable_laws = get_law_list(include_zeroth = TRUE)
 	to_chat(who, examine_block("<center>[title]</center><br>[english_list(printable_laws, "No laws", "<br>", "<br>")]"))
+	log_game("[printable_laws]")
 
 /datum/ai_laws/proc/clear_zeroth_law(force) //only removes zeroth from antag ai if force is 1
 	if(force)

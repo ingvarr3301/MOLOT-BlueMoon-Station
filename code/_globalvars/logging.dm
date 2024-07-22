@@ -55,8 +55,11 @@ GLOBAL_PROTECT(world_econ_log)
 GLOBAL_VAR(perf_log)
 GLOBAL_PROTECT(perf_log)
 
-// GLOBAL_VAR(demo_log)
-// GLOBAL_PROTECT(demo_log)
+GLOBAL_VAR(demo_directory)
+GLOBAL_PROTECT(demo_directory)
+
+GLOBAL_VAR(demo_log)
+GLOBAL_PROTECT(demo_log)
 
 GLOBAL_LIST_EMPTY(bombers)
 GLOBAL_PROTECT(bombers)

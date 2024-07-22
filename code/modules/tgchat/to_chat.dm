@@ -37,6 +37,13 @@
 	if(avoid_highlighting) message["avoidHighlighting"] = avoid_highlighting
 	var/message_blob = TGUI_CREATE_MESSAGE("chat/message", message)
 	var/message_html = message_to_html(message)
+
+	if(!confidential)
+		if(html)
+			SSdemo.write_chat(target, html)
+		else
+			SSdemo.write_chat(target, message)
+
 	if(islist(target))
 		for(var/_target in target)
 			var/client/client = CLIENT_FROM_VAR(_target)
@@ -75,7 +82,7 @@
 	confidential = FALSE
 )
 	if(isnull(Master) || Master.current_runlevel == RUNLEVEL_INIT || !SSchat?.initialized)
-		to_chat_immediate(target, html, type, text, avoid_highlighting)
+		to_chat_immediate(target, html, type, text, avoid_highlighting, confidential = confidential)
 		return
 
 	// Useful where the integer 0 is the entire message. Use case is enabling to_chat(target, some_boolean) while preventing to_chat(target, "")
@@ -95,4 +102,11 @@
 	if(text) message["text"] = text
 	if(html) message["html"] = html
 	if(avoid_highlighting) message["avoidHighlighting"] = avoid_highlighting
+
+	if(!confidential)
+		if(html)
+			SSdemo.write_chat(target, html)
+		else
+			SSdemo.write_chat(target, message)
+
 	SSchat.queue(target, message)

@@ -832,6 +832,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 		var/mob/M = i
 		if(M?.client && M.client.prefs.chat_toggles & CHAT_GHOSTPDA)
 			to_chat(M, "[FOLLOW_LINK(M, user)] [ghost_message]")
+
+	to_chat(SSdemo, "[FOLLOW_LINK(SSdemo, user)] [ghost_message]")
 	to_chat(user, "<span class='info'>Message sent to [target_text]: \"[message]\"</span>")
 	// Log in the talk log
 	user.log_talk(message, LOG_PDA, tag="PDA: [initial(name)] to [target_text] (BLOCKED:[string_blocked])")

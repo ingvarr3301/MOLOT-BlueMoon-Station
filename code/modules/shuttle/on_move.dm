@@ -63,6 +63,8 @@ All ShuttleMove procs go here
 		var/turf/open/new_open = newT
 		new_open.copy_air_with_tile(src)
 
+	SSdemo.mark_dirty(src)
+
 	return TRUE
 
 // Called on the new turf after everything has been moved

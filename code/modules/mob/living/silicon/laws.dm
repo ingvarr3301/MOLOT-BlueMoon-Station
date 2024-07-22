@@ -8,7 +8,7 @@
 /mob/living/silicon/proc/post_lawchange(announce = TRUE)
 	throw_alert("newlaw", /atom/movable/screen/alert/newlaw)
 	if(announce && last_lawchange_announce != world.time)
-		to_chat(src, "<b>Your laws have been changed.</b>")
+		to_chat(src, span_big_warning("Законы были изменены:"))
 		addtimer(CALLBACK(src, PROC_REF(show_laws)), 0)
 		last_lawchange_announce = world.time
 

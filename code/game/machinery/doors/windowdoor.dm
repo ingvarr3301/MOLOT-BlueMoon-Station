@@ -54,6 +54,7 @@
 		icon_state = base_state
 	else
 		icon_state = "[src.base_state]open"
+	SSdemo.mark_dirty(src)
 
 /obj/machinery/door/window/update_atom_colour()
 	. = ..()

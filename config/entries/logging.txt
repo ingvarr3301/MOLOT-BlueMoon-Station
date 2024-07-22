@@ -95,3 +95,5 @@ ERROR_SILENCE_TIME 6000
 How long to wait between messaging admins about an unique runtime
 ERROR_MSG_DELAY 50
 
+## Enable the demo subsystem
+DEMOS_ENABLED

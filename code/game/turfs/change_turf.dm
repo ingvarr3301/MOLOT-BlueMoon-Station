@@ -142,6 +142,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		for(var/turf/open/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.update_starlight()
 
+	SSdemo.mark_turf(W)
 	return W
 
 /turf/open/ChangeTurf(path, list/new_baseturfs, flags)

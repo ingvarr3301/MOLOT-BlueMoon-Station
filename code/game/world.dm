@@ -92,6 +92,7 @@ GLOBAL_LIST(topic_status_cache)
 		var/realtime = world.realtime
 		var/texttime = time2text(realtime, "YYYY/MM/DD")
 		GLOB.log_directory = "data/logs/[texttime]/round-"
+		GLOB.demo_directory = "data/replays"
 		GLOB.picture_logging_prefix = "L_[time2text(realtime, "YYYYMMDD")]_"
 		GLOB.picture_log_directory = "data/picture_logs/[texttime]/round-"
 		if(GLOB.round_id)
@@ -109,6 +110,7 @@ GLOBAL_LIST(topic_status_cache)
 		GLOB.picture_log_directory = "data/picture_logs/[override_dir]"
 
 	GLOB.world_game_log = "[GLOB.log_directory]/game.log"
+	GLOB.demo_log = "[GLOB.demo_directory]/[GLOB.round_id]_demo.txt"
 	GLOB.world_suspicious_login_log = "[GLOB.log_directory]/suspicious_logins.log"
 	GLOB.world_mecha_log = "[GLOB.log_directory]/mecha.log"
 	GLOB.world_virus_log = "[GLOB.log_directory]/virus.log"
@@ -163,6 +165,7 @@ GLOBAL_LIST(topic_status_cache)
 	if(fexists(GLOB.config_error_log))
 		fcopy(GLOB.config_error_log, "[GLOB.log_directory]/config_error.log")
 		fdel(GLOB.config_error_log)
+	GLOB.demo_log = "[GLOB.log_directory]/demo.txt"
 
 	if(GLOB.round_id)
 		log_game("Round ID: [GLOB.round_id]")
@@ -291,6 +294,7 @@ GLOBAL_LIST(topic_status_cache)
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
 		LIBCALL(debug_server, "auxtools_shutdown")()
+	SSdemo?.Shutdown()
 	..()
 
 /world/proc/update_status()
