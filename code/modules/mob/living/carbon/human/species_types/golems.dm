@@ -669,7 +669,6 @@
 /datum/species/golem/clockwork/no_scrap //These golems are created through the herald's beacon and leave normal corpses on death.
 	id = "clockwork golem servant"
 	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYES,NOSTOMACH,NOLIVER,NOGENITALS,NOAROUSAL,NOTRANSSTING,ROBOTIC_LIMBS,HAS_BONE)
-	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	inherent_traits = list(TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_NOHUNGER,TRAIT_NOTHIRST,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_NOFIRE,TRAIT_RADIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	armor = 15 //Balance reasons make this armor weak

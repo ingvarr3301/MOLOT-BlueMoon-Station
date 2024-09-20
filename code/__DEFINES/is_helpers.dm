@@ -278,3 +278,10 @@ GLOBAL_LIST_INIT(book_types, typecacheof(list(
 	/obj/item/storage/book)))
 
 #define isterrorspider(A) (istype((A), /mob/living/simple_animal/hostile/retaliate/poison/terror_spider))
+
+GLOBAL_LIST_INIT(turfs_openspace, typecacheof(list(
+	/turf/open/openspace,
+	/turf/open/space
+	)))
+
+#define isopenspaceturf(A) (is_type_in_typecache(A, GLOB.turfs_openspace))

@@ -47,8 +47,10 @@
 #define MOB_EPIC		(1 << 7)	// Megafauna
 #define MOB_REPTILE		(1 << 8)
 #define MOB_SPIRIT		(1 << 9)
+///The mob is a plant-based species, benefitting from light but suffering from darkness and plantkillers.
+#define MOB_PLANT 		(1 << 10)
 /// Mobs that otherwise support nanites
-#define MOB_NANITES		(1 << 10)
+#define MOB_NANITES		(1 << 11)
 
 /// Helper to figure out if an organ is organic
 #define IS_ORGANIC_ORGAN(organ) (!IS_ROBOTIC_ORGAN(organ)) // BLUEMOON EDIT - фикс прока (кривое, но и так сойдёт) [БЫЛО: #define IS_ORGANIC_ORGAN(organ) (organ.organ_flags & ORGAN_ORGANIC)]

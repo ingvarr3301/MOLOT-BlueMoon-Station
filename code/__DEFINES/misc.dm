@@ -222,10 +222,6 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 #define POLLTYPE_MULTI		"MULTICHOICE"
 #define POLLTYPE_IRV		"IRV"
 
-
-//Gets the turf this atom inhabits
-#define get_turf(A) (get_step(A, 0))
-
 //Same as above except gets the area instead
 #define get_area(A) (isarea(A) ? A : get_step(A, 0)?.loc)
 
