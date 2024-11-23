@@ -157,3 +157,17 @@
 	icon_state = "adlerpk"
 	item_state = "adlerpk"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_seu
+	name = "Corporate S.E.U."
+	desc = "Corporate Standardized Engineering Uniforms. The uniform of engineering workers used by several large corporations on Tayvar. It is equipped with additional gaskets to reduce the risk of injury and special signs to indicate the engineering level of access."
+	icon_state = "seu"
+	item_state = "seu"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/laskaskirt
+	name = "HoS cosplay skirt"
+	desc = "Skirt that looks like HoS one, but without any armor."
+	icon_state = "laskaskirt"
+	item_state = "laskaskirt"
+	can_adjust = TRUE
